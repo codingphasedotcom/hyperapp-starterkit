@@ -1,0 +1,53 @@
+@import url( 'https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:100,300,400,500');
+@import "reset";
+$textFont: 'Roboto Condensed', sans-serif;
+$headerFont: 'Roboto', sans-serif;
+@font-face {
+  font-family: road_rage;
+  src: url('/fonts/Road_Rage.otf');
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  // background: purple;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3636c1+0,161658+100 */
+  background: #3636c1;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #3636c1 0%, #161658 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #3636c1 0%,#161658 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #3636c1 0%,#161658 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: white;
+  font-weight: 100;
+  // max-width: 50%;
+  font-size: 4rem;
+  display: flex;
+}
+
+h4 {
+  color: white;
+  font-weight: 300;
+  // max-width: 50%;
+  font-size: 1rem;
+  display: flex;
+  padding-left: 20px;
+}
