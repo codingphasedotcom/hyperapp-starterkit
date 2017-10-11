@@ -26,13 +26,14 @@ body {
 
 #app {
   height: 100%;
-}
-
-.app {
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.app {
+  max-width: 700px;
+  text-align: right;
 }
 
 h1 {
@@ -43,11 +44,25 @@ h1 {
   display: flex;
 }
 
-h4 {
+a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+  // float: right;
   color: white;
   font-weight: 300;
   // max-width: 50%;
   font-size: 1rem;
-  display: flex;
   padding-left: 20px;
+  padding-bottom: 20px;
+
+  &:hover {
+    color: lightblue;
+  }
+}
+
+.stars {
+  display: block;
+  width: 100%;
 }

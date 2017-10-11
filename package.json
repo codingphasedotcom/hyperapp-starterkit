@@ -1,11 +1,8 @@
 {
-  "name": "RockyBoy",
+  "name": "hyperapp-starter-kit",
   "version": "1.0.0",
-  "description": "Super Cool Framework",
-  "main": "index.js",
-  "author": "joe santos garcia",
-  "license": "MIT",
-  "homepage": "http://rocky.codingphase.com/",
+  "description": "cool and fast way to run hyperapp",
+  "main": "gulpfile.js",
   "dependencies": {
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
@@ -43,5 +40,18 @@
   },
   "devDependencies": {
     "babel-preset-stage-0": "^6.24.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingphasedotcom/hyperapp-starterkit.git"
+  },
+  "keywords": [
+    "hyperapp"
+  ],
+  "author": "joe santos garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingphasedotcom/hyperapp-starterkit/issues"
+  },
+  "homepage": "https://github.com/codingphasedotcom/hyperapp-starterkit#readme"
 }

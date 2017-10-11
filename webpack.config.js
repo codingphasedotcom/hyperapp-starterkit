@@ -3,7 +3,7 @@ const path = require('path');
 const webpack = require('webpack')
 
 const VENDOR_LIBS = [
-  'hyperapp', 'gsap'
+  'hyperapp',
 ]
 
 module.exports = {
