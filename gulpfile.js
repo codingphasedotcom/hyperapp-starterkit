@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer')
 // const watch = require('gulp-watch')
 const browserSync = require('browser-sync')
 const reload = browserSync.reload
-const shell = require('gulp-shell')
+var exec = require('child_process').exec;
 
 gulp.task('default', ['styles', 'webpack', 'browser-sync'], () => {
   gulp.watch('./assets/sass/**/*', ['styles'])
@@ -39,16 +39,18 @@ gulp.task('browser-sync', ['styles'], function () {
   // })
 
   browserSync.init({
-        server: './public'
+        server: './public',
+        notify: false,
+        open: false //change this to true if you want the broser to open automatically 
     });
 })
 
-gulp.task('webpack', () => {
-  return gulp.src('*.js', {read: false})
-  .pipe(shell([
-    'webpack'
-  ]))
-  .pipe(browserSync.stream())
+gulp.task('webpack', (cb) => {
+  exec('webpack', function (err, stdout, stderr) {
+      console.log(stdout);
+      console.log(stderr);
+      cb(err);
+    });
 })
 
 // gulp.task('webpack', shell.task([

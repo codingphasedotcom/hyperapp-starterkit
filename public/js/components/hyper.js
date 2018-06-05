@@ -1,14 +1,6 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35,7 +27,7 @@ function intro(state, actions) {
 }
 
 /***/ }),
-/* 10 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84,7 +76,7 @@ function App(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 11 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -98,8 +90,7 @@ var globalState = exports.globalState = {
 };
 
 /***/ }),
-/* 12 */,
-/* 13 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -107,15 +98,11 @@ var globalState = exports.globalState = {
 
 var _hyperapp = __webpack_require__(0);
 
-var _hyperappReduxDevtools = __webpack_require__(12);
+var _actions = __webpack_require__(1);
 
-var _hyperappReduxDevtools2 = _interopRequireDefault(_hyperappReduxDevtools);
+var _globalState = __webpack_require__(3);
 
-var _actions = __webpack_require__(9);
-
-var _globalState = __webpack_require__(11);
-
-var _App = __webpack_require__(10);
+var _App = __webpack_require__(2);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -141,9 +128,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     load: function load(state, actions) {
       actions.intro();
     }
-  },
-  mixins: [(0, _hyperappReduxDevtools2.default)()]
+  }
 });
 
 /***/ })
-],[13]);
+],[4]);
