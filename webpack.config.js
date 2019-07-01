@@ -1,60 +1,85 @@
-
 const path = require('path');
-const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJS = require('uglify-es');
 
-const VENDOR_LIBS = [
-  'hyperapp'
-]
+const DefaultUglifyJsOptions = UglifyJS.default_options();
+const compress = DefaultUglifyJsOptions.compress;
+for (let compressOption in compress) {
+	compress[compressOption] = false;
+}
+compress.unused = true;
 
-module.exports = {
-  entry: {
-    hyper: './assets/js/hyper/index.js',
-    vendor: VENDOR_LIBS
-  },
-  output: { filename: '[name].js',
-            path: path.resolve(__dirname, 'public/js/components') },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            [ 'es2015', { modules: false } ]
-          ]
-        }
-      },
-      {
-            test: /\.scss$/,
-            use: [{
-                loader: "style-loader"
-            }, {
-                loader: "css-loader", options: {
-                    sourceMap: true
-                }
-            }, {
-                loader: "sass-loader", options: {
-                    sourceMap: true
-                }
-            }]
-        }
-    ]
-  },
-  plugins: [
-            new webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor',
-                minChunks: function (module) {
-                   // this assumes your vendor imports exist in the node_modules directory
-                   return module.context && module.context.indexOf('node_modules') !== -1;
-                }
-            }),
-    //         new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
-    // }),
-    // new webpack.Define
-            // new webpack.optimize.CommonsChunkPlugin({
-            //     name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
-            // })
-        ]
+module.exports = env => {
+	return {
+		entry: {
+			hyper: './assets/js/hyper/index.js'
+			// SApp: './assets/js/components/svelte/SvelteApp.js'
+			// main: './assets/js/main.js'
+		},
+		output: {
+			path: path.resolve(__dirname, 'public/js/dist'),
+			filename: '[name].js' // '[name].[chunkhash].js' put this if you want to get hashed files to cache bust
+		},
+		module: {
+			rules: [
+				{
+					test: /\.js$/,
+					exclude: /node_modules/,
+					use: ['babel-loader', 'prettier-loader']
+				},
+				{
+					test: /\.svelte$/,
+					exclude: /node_modules/,
+					use: 'svelte-loader'
+				},
+				{
+					test: /\.scss$/,
+					use: [
+						'style-loader',
+						MiniCssExtractPlugin.loader,
+						'css-loader',
+						'sass-loader',
+						'postcss-loader'
+					]
+				}
+			]
+		},
+		plugins: [
+			new MiniCssExtractPlugin({
+				filename: 'styles.css' // 'style.[contenthash].css' put this if you want to get hashed files to cache bust
+			}),
+			// new HtmlWebpackPlugin({
+			// 	inject: false,
+			// 	hash: true,
+			// 	template: './assets/index.html',
+			// 	children: false,
+			// 	filename: '../index.html'
+			// }),
+			new WebpackMd5Hash()
+		],
+		optimization: {
+			splitChunks: {
+				chunks: 'all',
+				minSize: 0
+			},
+			minimize: true,
+			minimizer: [
+				new UglifyJsPlugin({
+					uglifyOptions: {
+						compress,
+						mangle: false,
+						output: {
+							beautify: env.NODE_ENV !== 'production' ? true : false
+						}
+					}
+				})
+			],
+			usedExports: true,
+			sideEffects: true
+		}
+	};
 };

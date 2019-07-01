@@ -1,3 +1,3 @@
 export const globalState = {
-  count: 0
-}
+	count: 0
+};

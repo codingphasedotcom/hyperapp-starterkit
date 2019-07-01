@@ -1,21 +1,16 @@
 export const actions = {
-  up,
-  intro,
-  showMenu
+	up,
+	intro,
+	showMenu
+};
+
+function up(state, actions) {
+	return { count: state.count + 1 };
 }
 
-function up (state, actions) {
-  return (
-    {count: state.count + 1}
-  )
-}
+function showMenu() {}
 
-function showMenu(){
-}
-
-function intro(state, actions){
-  console.log('Just ran my first action' )
-  return (
-    {count: state.count + 1}
-  )
+function intro(state, actions) {
+	console.log('Just ran my first action');
+	return { count: state.count + 1 };
 }
