@@ -1,0 +1,50 @@
+.OurStory {
+  padding: 100px;
+  h5{
+    color:grey;
+    font-size: 1.1rem;
+    margin: .5rem 0 1rem;
+    padding-top: 1rem;
+  }
+  h2{
+    font-family: $displayFont;
+    font-size: 3rem;
+    margin: .5rem 0 1.5rem;
+    text-transform: capitalize;
+  }
+  p{
+    font-size: 1.1rem;
+    color: grey;
+    line-height: 1.75rem;
+  }
+  .quote {
+   padding: 1rem;
+   margin-bottom: 2rem;
+  }
+  .reserve-btn {
+    font-family: $displayFont;
+    display: inline-block;
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    transition: all .6s ease-in-out;
+    &:hover{
+      background: orange;
+      color: black;
+    }
+  }
+  .video-img{
+    max-width: 450px;
+    height: 650px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, .2));
+    background-image: linear-gradient(135deg, rgba(0, 0, 0, .2) 0, #000 100%),
+    url("https://cdn.vox-cdn.com/thumbor/toiOpL0FLabzY9IzSe5Z5OYi80I=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19555398/shutterstock_1035510703.jpg");
+    background-position: right;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+  }
+  }

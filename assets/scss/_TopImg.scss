@@ -1,0 +1,49 @@
+.TopImg {
+  background: black;
+  height: 500px;
+  background: linear-gradient(135deg, rgba(0, 0, 0, .2));
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, .2) 0, #000 100%),
+  url("https://4.bp.blogspot.com/-E1kBDRu6IB0/WZ5mZ0Jy6wI/AAAAAAAAw2w/AAVfiCocr3MgJGJT9mhbnDOOzjrdofZXQCEwYBhgL/s1600/3.%2BDSC02160%2B%252815%2529.JPG");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .title {
+    padding: 200px 0 80px;
+    text-align: right;
+
+
+  h1{
+    font-family: $displayFont;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 300;
+  }
+
+  h5{
+    text-transform: uppercase;
+    color: white;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
+  .contact-info{
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    text-align: right;
+    color: white;
+    font-size: .9rem;
+    line-height: 1.5rem;
+    strong{
+      font-weight: bold;
+    }
+    .booking{
+      margin-bottom: 10px;
+    }
+    h2{
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  }
+  }

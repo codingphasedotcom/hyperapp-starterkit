@@ -1,9 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Rozha+One&display=swap');
+@import "variables";
 @import "reset";
+@import "grid";
+
+@import "Header";
+@import "TopImg";
+@import "OurStory";
 
 
 
 body {
+  font-family: $textFont;
   line-height: 1;
   background: white;
 }
@@ -31,34 +38,7 @@ table {
   border-spacing: 0;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
 h1 {
   font-weight: 100;
   font-size: 50px;
-}
-
-#app {
-  height: 100vh;
-  width: 100%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  div{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  a {
-    text-decoration: none;
-    color: #30395C;
-    transition: all 0.3s ease-in-out;
-    text-align: right;
-  }
-  a:hover {
-    color: #43D4D6;
-  }
 }
